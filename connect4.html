@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="stylesheet" href="assets/css/spinner.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+
+<body>
+    <div class="" id="fader">
+    </div>
+    <div class="container" id="mainContent">
+        <div class="container text-center" id="gameWindow">
+            <!-- Game bored -->
+            <div style="">
+                </div>
+                <div class="container" id="slots">
+                <img class="gameBored" id="1" src="assets/images/C4Col.png" /><img class="gameBored" id="2" src="assets/images/C4Col.png" /><img
+                    class="gameBored" id="3" src="assets/images/C4Col.png" /><img class="gameBored" id="4" src="assets/images/C4Col.png" /><img
+                    class="gameBored" id="5" src="assets/images/C4Col.png" /><img class="gameBored" id="6" src="assets/images/C4Col.png" /><img
+                    class="gameBored" id="7" src="assets/images/C4Col.png" />
+            </div>
+            <!-- Loading Spinner -->
+            <div class="lds-spinner" style="display:none">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Welcome! -->
+            <div class="container" style="font-weight:bold; display: none;">
+                Welcome to my multiplay connect 4 game!
+                <br>
+                Please select either <span style="color:#ee1111">RED</span> or <span style="color:yellow;">YELLOW</span>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Waiting for <span id="needXPlayers">2</span> players to join.
+            </div>
+
+        </div>
+        <!-- Chat -->
+        <div class="row justify-content-center btnHolder">
+            <button class="btn col-4 text-center joinBtn" id="joinRed">Join as RED</button>
+            <button class="btn col-4 text-center joinBtn offset-1" id="joinBlack">Join as YELLOW</dbutton>
+        </div>
+        <!-- Chat input -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="messages">
+                    <div class="msg-left">
+                        Waiting for RED to join
+                    </div>
+                    <div class="msg-right">
+                        Waiting for YELLOW to join
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top:8px">
+                <div class="form-group mb-2" style="width:500px">
+                    <label for="chat" class="sr-only">Password</label>
+                    <input type="text" class="form-control" id="chat" placeholder="Your message">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="assets/js/connect4.js"></script>
+</body>
+
+</html>
