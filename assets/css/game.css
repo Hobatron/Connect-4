@@ -78,16 +78,16 @@ img {
     font-weight: bold;
     margin: 10 10 0 0;
 }
-#joinRed:focus{
+#joinRed:hover{
     background-color: #ee1111;
     color: #ada1db;
 }
-#joinBlack{
+#joinYellow{
     background-color: #ada1db;
     color: yellow;
     font-weight: bold;
 }
-#joinBlack:focus{
+#joinYellow:hover{
     background-color: yellow;
     color: #ada1db;
 }

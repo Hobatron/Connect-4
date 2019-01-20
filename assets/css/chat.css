@@ -10,7 +10,7 @@
 #msg {
   position: relative;
 }
-.msg-right{
+.msg-yellowTeam{
   background:#ffff00a4;
   padding:10px;
   text-align:right;
@@ -19,16 +19,27 @@
   width:70%;
   float:right;
   margin-right: 30px;
+  border-radius: 10px 0 10px 10px;
 }
-.msg-left{
+.msg-redTeam{
   background:#ee1111a4;
   padding:10px;
   margin:5px;
   width:70%;
   float:left;
   margin-left: 30px;
+  border-radius: 0 10px 10px;
 }
-.msg-left:before {
+.msg-observer{
+  background:#818080a4;
+  padding:10px;
+  margin:5px;
+  width:80%;
+  float:left;
+  margin-left: 10%;
+  border-radius: 10px;
+}
+.msg-redTeam:before {
   width: 0;
   height: 0;
   content: "";
@@ -38,9 +49,9 @@
   border-style: solid;
   border-width: 20px 0px 0px 20px;
   border-color: #ee1111a4 transparent transparent transparent;
-   
+
 }
-.msg-right:after {
+.msg-yellowTeam:after {
   width: 0;
   height: 0;
   content: "";

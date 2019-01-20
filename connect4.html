@@ -13,21 +13,64 @@
 </head>
 
 <body>
+    <!-- ***UPCOMING CHANGES*** -->
+    <!--  
+        third(and more) player to observe-only
+        reset chat only if ALL players leave
+
+    -->
     <div class="" id="fader">
     </div>
     <div class="container" id="mainContent">
         <div class="container text-center" id="gameWindow">
             <!-- Game bored -->
-            <div style="">
-                </div>
-                <div class="container" id="slots">
+            <div class="container" id="slots" style="display: none;">
                 <img class="gameBored" id="1" src="assets/images/C4Col.png" /><img class="gameBored" id="2" src="assets/images/C4Col.png" /><img
                     class="gameBored" id="3" src="assets/images/C4Col.png" /><img class="gameBored" id="4" src="assets/images/C4Col.png" /><img
                     class="gameBored" id="5" src="assets/images/C4Col.png" /><img class="gameBored" id="6" src="assets/images/C4Col.png" /><img
                     class="gameBored" id="7" src="assets/images/C4Col.png" />
             </div>
+            <!-- Modals -->
+            <div class="modal fade" id="userLeft" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">What a sore loser!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Your opponite has left, hit close to wait for another one!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary reset">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="userWon" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="winner">\\\\\</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="winner-body">\\\\\
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary reset">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Loading Spinner -->
-            <div class="lds-spinner" style="display:none">
+            <div class="lds-spinner waiting">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -42,7 +85,7 @@
                 <div></div>
             </div>
             <!-- Welcome! -->
-            <div class="container" style="font-weight:bold; display: none;">
+            <div class="container waiting" style="font-weight:bold;">
                 Welcome to my multiplay connect 4 game!
                 <br>
                 Please select either <span style="color:#ee1111">RED</span> or <span style="color:yellow;">YELLOW</span>
@@ -57,29 +100,24 @@
             </div>
 
         </div>
-        <!-- Chat -->
+        <!-- join buttons -->
         <div class="row justify-content-center btnHolder">
-            <button class="btn col-4 text-center joinBtn" id="joinRed">Join as RED</button>
-            <button class="btn col-4 text-center joinBtn offset-1" id="joinBlack">Join as YELLOW</dbutton>
+            <button class="btn col-4 text-center joinBtn" id="joinRed" data="redTeam">Join as RED</button>
+            <button class="btn col-4 text-center joinBtn offset-1" id="joinYellow" data="yellowTeam">Join as YELLOW</dbutton>
         </div>
-        <!-- Chat input -->
+        <!-- Chat -->
         <div class="container">
             <div class="row justify-content-center">
                 <div id="messages">
-                    <div class="msg-left">
-                        Waiting for RED to join
-                    </div>
-                    <div class="msg-right">
-                        Waiting for YELLOW to join
-                    </div>
                 </div>
             </div>
             <div class="row justify-content-center" style="margin-top:8px">
-                <div class="form-group mb-2" style="width:500px">
-                    <label for="chat" class="sr-only">Password</label>
+                <button type="submit" id="clrChat" class="btn btn-primary mb-2">Clear Chat</button>
+                <div class="form-group mb-2" style="width:480px">
+                    <label for="chat" class="sr-only"></label>
                     <input type="text" class="form-control" id="chat" placeholder="Your message">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Send</button>
+                <button type="submit" id="send" class="btn btn-primary mb-2">Send</button>
             </div>
         </div>
     </div>
@@ -87,9 +125,12 @@
 
 
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
         crossorigin='anonymous'></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
     <script src="assets/js/connect4.js"></script>
 </body>
 
